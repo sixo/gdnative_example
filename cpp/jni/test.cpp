@@ -62,7 +62,7 @@ void GDN_EXPORT godot_nativescript_init(void *p_handle)
     godot_instance_destroy_func destroy = { NULL, NULL, NULL };
     destroy.destroy_func = &android_gdnative_destructor;
 
-    nativescript_api->godot_nativescript_register_class(p_handle, "XYClass", "Node2D",
+    nativescript_api->godot_nativescript_register_class(p_handle, "AndroidGDNative", "Node2D",
         create, destroy);
 
     godot_instance_method test = { NULL, NULL, NULL };
@@ -70,7 +70,7 @@ void GDN_EXPORT godot_nativescript_init(void *p_handle)
 
     godot_method_attributes attributes = { GODOT_METHOD_RPC_MODE_DISABLED };
 
-    nativescript_api->godot_nativescript_register_method(p_handle, "XYClass", "test",
+    nativescript_api->godot_nativescript_register_method(p_handle, "AndroidGDNative", "test",
         attributes, test);
 }
 
